@@ -5,7 +5,7 @@ const ExpenseApp = () => {
   const [expenses, setExpenses] = useState([]);
   const [description, setDescription] = useState('');
   const [amount, setAmount] = useState('');
-  const [editingExpense, setEditingExpense] = useState(null);
+  const [editingExpense] = useState(null);
 
   //const apiUrl = 'http://localhost:5000/expenses';
 
@@ -19,7 +19,7 @@ const ExpenseApp = () => {
         setExpenses(res.data);
       })
       .catch(err => console.error('GET Error:', err));
-  }, []);
+  }, [apiUrl]);
 
   const handleAddExpense = () => {
     if (!description || !amount) {
