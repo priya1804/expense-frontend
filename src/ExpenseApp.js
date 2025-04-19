@@ -7,7 +7,10 @@ const ExpenseApp = () => {
   const [amount, setAmount] = useState('');
   const [editingExpense, setEditingExpense] = useState(null);
 
-  const apiUrl = 'http://localhost:5000/expenses';
+  //const apiUrl = 'http://localhost:5000/expenses';
+
+  const apiUrl = `${process.env.REACT_APP_API_URL}/expenses`;
+
 
   useEffect(() => {
     axios.get(apiUrl)
